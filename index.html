@@ -3,66 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Codigos Scratch - Jogo do Panda</title>
+  <title>Jogo do Panda no Scratch</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero">
-    <nav class="topbar" aria-label="Navegacao principal">
+    <nav class="topbar" aria-label="Navegação principal">
       <strong>Projeto Scratch</strong>
       <div>
-        <a href="#codigo-1">Codigo 1</a>
-        <a href="#codigo-2">Codigo 2</a>
-        <a href="#sequencia">Sequencia</a>
+        <a href="#codigo-1">Mover</a>
+        <a href="#codigo-2">Cair</a>
+        <a href="#sequencia">Passos</a>
       </div>
     </nav>
     <section class="hero-text">
-      <span>Jogo com Panda</span>
-      <h1>Apresentacao dos Codigos</h1>
-      <p>Site para explicar os blocos usados no Scratch: movimento do Panda, queda do objeto, cronometro e colisao.</p>
-      <a class="button" href="#codigo-1">Ver apresentacao</a>
+      <span>4º e 5º ano</span>
+      <h1>Jogo do Panda no Scratch</h1>
+      <p>Uma explicação simples dos blocos usados para criar um jogo: o Panda se mexe, o objeto cai e o jogo termina quando eles encostam.</p>
+      <a class="button" href="#codigo-1">Começar</a>
     </section>
   </header>
 
   <main>
     <section class="intro">
       <div>
-        <span class="label">Resumo</span>
-        <h2>Como o jogo funciona</h2>
+        <span class="label">Ideia do jogo</span>
+        <h2>O que vamos aprender?</h2>
       </div>
-      <p>Quando a bandeira verde e clicada, o jogo comeca. O Panda pode andar para a direita e para a esquerda com as setas. Enquanto isso, outro objeto cai pela tela, reaparece no topo em uma posicao aleatoria e encerra a partida se tocar no Panda.</p>
+      <div class="learning-boxes">
+        <article>
+          <strong>Comandos</strong>
+          <p>Os blocos dizem ao personagem o que ele deve fazer.</p>
+        </article>
+        <article>
+          <strong>Repetição</strong>
+          <p>O bloco “repetir para sempre” faz uma ação acontecer muitas vezes.</p>
+        </article>
+        <article>
+          <strong>Condição</strong>
+          <p>O bloco “se... então” só funciona quando algo especial acontece.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="summary-band">
+      <div>
+        <span class="label">Resumo rápido</span>
+        <h2>Como a partida acontece</h2>
+        <p>Ao clicar na bandeira verde, o jogo começa. O aluno controla o Panda com as setas do teclado. O objeto cai do alto da tela. Se o objeto tocar no Panda, a partida acaba.</p>
+      </div>
     </section>
 
     <section class="code-area blue" id="codigo-1">
       <article class="panel">
         <div class="explain">
-          <span class="label">Codigo 1</span>
-          <h2>Controle do Panda</h2>
-          <p>Este script controla a movimentacao horizontal do personagem e faz a animacao trocando a caracterizacao.</p>
+          <span class="label">Parte 1</span>
+          <h2>Como o Panda se move</h2>
+          <p>Este código faz o Panda andar para os lados. Ele também vira para a direção certa e troca de roupa para parecer que está andando.</p>
           <ul>
-            <li>Reinicia o cronometro no inicio.</li>
-            <li>Fica repetindo os comandos para sempre.</li>
-            <li>Se a seta direita estiver pressionada, anda 10 pontos.</li>
-            <li>Se a seta esquerda estiver pressionada, anda -10 pontos.</li>
+            <li>A bandeira verde inicia o jogo.</li>
+            <li>O cronômetro volta para zero.</li>
+            <li>A seta direita faz o Panda andar para a direita.</li>
+            <li>A seta esquerda faz o Panda andar para a esquerda.</li>
+            <li>Quando chega na borda, ele não sai da tela.</li>
           </ul>
+          <div class="teacher-note">
+            <strong>Para explicar em sala:</strong>
+            <p>Este é o controle do jogador. Sem ele, o Panda ficaria parado.</p>
+          </div>
         </div>
-        <div class="scratch" aria-label="Codigo Scratch do movimento do Panda">
+        <div class="scratch" aria-label="Código Scratch do movimento do Panda">
           <div class="block hat">quando bandeira verde for clicado</div>
-          <div class="block motion">reiniciar o cronometro</div>
+          <div class="block motion">reiniciar o cronômetro</div>
           <div class="block control large">
             <span>repetir para sempre</span>
             <div class="block motion">se bater no limite, ressaltar</div>
             <div class="block control stack">
-              <span>se tecla seta para a direita esta pressionada? entao</span>
+              <span>se tecla seta para a direita está pressionada? então</span>
               <div class="block motion">alterar x em 10</div>
-              <div class="block motion">apontar na direcao 90</div>
-              <div class="block looks">proxima caracterizacao</div>
+              <div class="block motion">apontar na direção 90</div>
+              <div class="block looks">próxima caracterização</div>
             </div>
             <div class="block control stack">
-              <span>se tecla seta para a esquerda esta pressionada? entao</span>
+              <span>se tecla seta para a esquerda está pressionada? então</span>
               <div class="block motion">alterar x em -10</div>
-              <div class="block motion">apontar na direcao -90</div>
-              <div class="block looks">proxima caracterizacao</div>
+              <div class="block motion">apontar na direção -90</div>
+              <div class="block looks">próxima caracterização</div>
             </div>
           </div>
         </div>
@@ -72,30 +98,34 @@
     <section class="code-area gold" id="codigo-2">
       <article class="panel reverse">
         <div class="explain">
-          <span class="label">Codigo 2</span>
-          <h2>Objeto que cai</h2>
-          <p>Este script faz o objeto cair, salva o tempo, reposiciona o objeto quando ele passa do limite inferior e para tudo se houver colisao.</p>
+          <span class="label">Parte 2</span>
+          <h2>Como o objeto cai</h2>
+          <p>Este código faz o objeto aparecer no alto e descer. Quando ele passa do fim da tela, volta para cima em outro lugar.</p>
           <ul>
-            <li>Comeca em x = 0 e y = 250.</li>
-            <li>Define a variavel Tempo como o cronometro.</li>
-            <li>Altera y em -6 para descer.</li>
-            <li>Quando y fica menor que -234, volta ao topo.</li>
-            <li>Se tocar no Panda, todos os scripts param.</li>
+            <li>O objeto começa no alto da tela.</li>
+            <li>A variável Tempo guarda o tempo da partida.</li>
+            <li>O valor de y diminui, então o objeto desce.</li>
+            <li>Ao chegar embaixo, ele volta para cima.</li>
+            <li>Se tocar no Panda, todos os blocos param.</li>
           </ul>
+          <div class="teacher-note">
+            <strong>Para explicar em sala:</strong>
+            <p>Este é o desafio do jogo. O jogador precisa desviar do objeto.</p>
+          </div>
         </div>
-        <div class="scratch" aria-label="Codigo Scratch da queda e colisao">
+        <div class="scratch" aria-label="Código Scratch da queda e colisão">
           <div class="block hat">quando bandeira verde for clicado</div>
           <div class="block motion">ir para x: 0 y: 250</div>
           <div class="block control large">
             <span>repetir para sempre</span>
-            <div class="block variable">definir Tempo para cronometro</div>
+            <div class="block variable">definir Tempo para cronômetro</div>
             <div class="block motion">alterar y em -6</div>
             <div class="block control stack">
-              <span>se coordenada y da posicao &lt; -234 entao</span>
-              <div class="block motion">ir para x: aleatorio entre -200 e 200 y: 125</div>
+              <span>se coordenada y da posição &lt; -234 então</span>
+              <div class="block motion">ir para x: aleatório entre -200 e 200 y: 125</div>
             </div>
             <div class="block control stack">
-              <span>se a tocar Panda? entao</span>
+              <span>se a tocar Panda? então</span>
               <div class="block control small">parar todos</div>
             </div>
           </div>
@@ -104,14 +134,20 @@
     </section>
 
     <section class="flow" id="sequencia">
-      <span class="label">Sequencia</span>
+      <span class="label">Passo a passo</span>
       <h2>Ordem dos acontecimentos</h2>
       <div class="steps">
-        <article><strong>1. Iniciar</strong><p>A bandeira verde comeca o jogo e reinicia o cronometro.</p></article>
-        <article><strong>2. Controlar</strong><p>O jogador usa as setas para mover o Panda.</p></article>
-        <article><strong>3. Desviar</strong><p>O objeto cai e volta ao topo em posicoes diferentes.</p></article>
-        <article><strong>4. Encerrar</strong><p>Quando o objeto toca no Panda, o jogo para.</p></article>
+        <article><strong>1. Começa</strong><p>A bandeira verde inicia tudo e zera o tempo.</p></article>
+        <article><strong>2. O Panda anda</strong><p>As setas fazem o personagem ir para os lados.</p></article>
+        <article><strong>3. O objeto desce</strong><p>Ele cai do alto e volta para cima quando passa do limite.</p></article>
+        <article><strong>4. A partida termina</strong><p>Se o objeto tocar no Panda, o jogo para.</p></article>
       </div>
+    </section>
+
+    <section class="question-band">
+      <span class="label">Pergunta para pensar</span>
+      <h2>Como poderíamos deixar o jogo mais divertido?</h2>
+      <p>Podemos mudar a velocidade, colocar pontos, criar fases ou adicionar sons. Programar é testar ideias e melhorar aos poucos.</p>
     </section>
   </main>
 </body>
