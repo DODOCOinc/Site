@@ -13,14 +13,14 @@
       <div>
         <a href="#ator">Ator</a>
         <a href="#montagem">Montagem</a>
-        <a href="#codigo">Código</a>
+        <a href="#codigo">Blocos</a>
         <a href="#sequencia">Passos</a>
       </div>
     </nav>
     <section class="hero-text">
       <span>4º e 5º ano</span>
       <h1>Ligando e desligando LEDs</h1>
-      <p>Uma apresentação simples sobre como montar um código para acender e apagar LEDs, usando o Arduino Leonardo como o ator da programação.</p>
+      <p>Uma apresentação simples sobre como montar blocos para acender e apagar LEDs, usando o Arduino Leonardo como o ator da programação.</p>
       <a class="button" href="#ator">Começar</a>
     </section>
   </header>
@@ -33,8 +33,8 @@
       </div>
       <div class="learning-boxes">
         <article>
-          <strong>Código</strong>
-          <p>O código é o roteiro. Ele diz o que deve acontecer.</p>
+          <strong>Blocos</strong>
+          <p>Os blocos são o roteiro. Eles dizem o que deve acontecer.</p>
         </article>
         <article>
           <strong>Arduino Leonardo</strong>
@@ -60,7 +60,7 @@
         <div class="explain">
           <span class="label">Parte 1</span>
           <h2>Montagem do circuito</h2>
-          <p>Antes do código funcionar, precisamos ligar os componentes no Arduino Leonardo. Cada LED deve ter um caminho seguro para receber energia.</p>
+          <p>Antes dos blocos funcionarem, precisamos ligar os componentes no Arduino Leonardo. Cada LED deve ter um caminho seguro para receber energia.</p>
           <ul>
             <li>Use um LED no pino 9.</li>
             <li>Use outro LED no pino 10.</li>
@@ -85,7 +85,7 @@
             <div class="led led-green"><span></span><strong>LED 2</strong></div>
             <div class="ground">GND</div>
           </div>
-          <p>O código fala com os pinos. Os pinos ligam e desligam os LEDs.</p>
+          <p>Os blocos falam com os pinos. Os pinos ligam e desligam os LEDs.</p>
         </div>
       </article>
     </section>
@@ -94,37 +94,35 @@
       <article class="panel reverse">
         <div class="explain">
           <span class="label">Parte 2</span>
-          <h2>Montagem do código</h2>
-          <p>O código tem duas partes importantes: uma prepara os pinos e a outra repete a sequência de luzes.</p>
+          <h2>Montagem dos blocos</h2>
+          <p>Os blocos organizam as ações do Arduino Leonardo. Primeiro preparamos os pinos. Depois criamos uma repetição para as luzes acenderem e apagarem.</p>
           <ul>
-            <li><strong>setup()</strong> prepara o Arduino quando o projeto começa.</li>
-            <li><strong>pinMode()</strong> diz que os pinos 9 e 10 serão saídas.</li>
-            <li><strong>loop()</strong> repete os comandos muitas vezes.</li>
-            <li><strong>digitalWrite()</strong> liga ou desliga um LED.</li>
-            <li><strong>delay()</strong> faz o Arduino esperar um tempo.</li>
+            <li><strong>Ao iniciar</strong> prepara o Arduino quando o projeto começa.</li>
+            <li><strong>Definir pino como saída</strong> diz quais pinos vão mandar energia.</li>
+            <li><strong>Repetir para sempre</strong> faz a sequência acontecer muitas vezes.</li>
+            <li><strong>Ligar pino</strong> acende o LED.</li>
+            <li><strong>Desligar pino</strong> apaga o LED.</li>
+            <li><strong>Esperar</strong> deixa a luz ligada ou apagada por um tempo.</li>
           </ul>
           <div class="teacher-note">
             <strong>Para explicar em sala:</strong>
-            <p>O Arduino Leonardo não adivinha. Ele só faz o que o código manda, na ordem em que está escrito.</p>
+            <p>O Arduino Leonardo não adivinha. Ele atua seguindo os blocos na ordem em que foram montados.</p>
           </div>
         </div>
-        <pre class="code-card" aria-label="Código Arduino para ligar e desligar LEDs"><code>int ledVermelho = 9;
-int ledVerde = 10;
-
-void setup() {
-  pinMode(ledVermelho, OUTPUT);
-  pinMode(ledVerde, OUTPUT);
-}
-
-void loop() {
-  digitalWrite(ledVermelho, HIGH);
-  digitalWrite(ledVerde, LOW);
-  delay(1000);
-
-  digitalWrite(ledVermelho, LOW);
-  digitalWrite(ledVerde, HIGH);
-  delay(1000);
-}</code></pre>
+        <div class="blocks-card" aria-label="Blocos para ligar e desligar LEDs com Arduino Leonardo">
+          <div class="block start">ao iniciar</div>
+          <div class="block setup">definir pino 9 como saída</div>
+          <div class="block setup">definir pino 10 como saída</div>
+          <div class="block repeat large">
+            <span>repetir para sempre</span>
+            <div class="block output red">ligar pino 9</div>
+            <div class="block output green">desligar pino 10</div>
+            <div class="block wait">esperar 1 segundo</div>
+            <div class="block output red">desligar pino 9</div>
+            <div class="block output green">ligar pino 10</div>
+            <div class="block wait">esperar 1 segundo</div>
+          </div>
+        </div>
       </article>
     </section>
 
@@ -142,7 +140,7 @@ void loop() {
     <section class="question-band">
       <span class="label">Pergunta para pensar</span>
       <h2>Como mudar a sequência de luzes?</h2>
-      <p>Podemos trocar o tempo do delay, adicionar mais LEDs ou mudar a ordem em que eles acendem. Programar é montar instruções para o nosso ator executar.</p>
+      <p>Podemos trocar o tempo do bloco esperar, adicionar mais LEDs ou mudar a ordem em que eles acendem. Programar é montar instruções para o nosso ator executar.</p>
     </section>
   </main>
 </body>
