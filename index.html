@@ -3,24 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arduino Leonardo e LEDs</title>
+  <title>Arduino Leonardo e LEDs no mBlock</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero">
     <nav class="topbar" aria-label="Navegação principal">
-      <strong>Arduino Leonardo</strong>
+      <strong>mBlock + Arduino Leonardo</strong>
       <div>
         <a href="#ator">Ator</a>
         <a href="#montagem">Montagem</a>
-        <a href="#codigo">Blocos</a>
+        <a href="#codigo">Blocos mBlock</a>
         <a href="#sequencia">Passos</a>
       </div>
     </nav>
     <section class="hero-text">
       <span>4º e 5º ano</span>
       <h1>Ligando e desligando LEDs</h1>
-      <p>Uma apresentação simples sobre como montar blocos para acender e apagar LEDs, usando o Arduino Leonardo como o ator da programação.</p>
+      <p>Uma apresentação simples sobre como montar a programação em blocos no mBlock, usando o Arduino Leonardo como o ator que executa os comandos.</p>
       <a class="button" href="#ator">Começar</a>
     </section>
   </header>
@@ -33,12 +33,12 @@
       </div>
       <div class="learning-boxes">
         <article>
-          <strong>Blocos</strong>
-          <p>Os blocos são o roteiro. Eles dizem o que deve acontecer.</p>
+          <strong>Blocos do mBlock</strong>
+          <p>Os blocos são o roteiro. Eles dizem quais ações devem acontecer.</p>
         </article>
         <article>
           <strong>Arduino Leonardo</strong>
-          <p>O Arduino é o ator. Ele recebe o roteiro e faz a ação.</p>
+          <p>O Arduino é o ator. Ele recebe os blocos e faz a ação no circuito.</p>
         </article>
         <article>
           <strong>LEDs</strong>
@@ -51,7 +51,7 @@
       <div>
         <span class="label">Resumo rápido</span>
         <h2>O que o projeto faz?</h2>
-        <p>O Arduino Leonardo controla dois LEDs. Primeiro ele liga um LED, espera um pouco, desliga esse LED e liga o outro. Depois repete tudo de novo, como uma sequência de luzes.</p>
+        <p>No mBlock, montamos blocos para o Arduino Leonardo controlar dois LEDs. Um LED acende, o outro apaga, o Arduino espera um pouco e depois troca as luzes.</p>
       </div>
     </section>
 
@@ -62,30 +62,30 @@
           <h2>Montagem do circuito</h2>
           <p>Antes dos blocos funcionarem, precisamos ligar os componentes no Arduino Leonardo. Cada LED deve ter um caminho seguro para receber energia.</p>
           <ul>
-            <li>Use um LED no pino 9.</li>
-            <li>Use outro LED no pino 10.</li>
+            <li>Use um LED no pino digital 9.</li>
+            <li>Use outro LED no pino digital 10.</li>
             <li>Cada LED deve ter um resistor para proteger o circuito.</li>
             <li>A perna maior do LED vai para o pino escolhido.</li>
             <li>A perna menor vai para o GND, que é o terra.</li>
           </ul>
           <div class="teacher-note">
             <strong>Para explicar em sala:</strong>
-            <p>O pino funciona como uma porta. Quando o Arduino manda energia pela porta, o LED acende.</p>
+            <p>No mBlock, usamos blocos para mandar ordens aos pinos digitais do Arduino Leonardo.</p>
           </div>
         </div>
         <div class="board-card" aria-label="Representação da montagem com Arduino Leonardo e LEDs">
           <div class="board-title">Arduino Leonardo como ator</div>
           <div class="board">
             <div class="chip">Leonardo</div>
-            <div class="pin pin-9">Pino 9</div>
-            <div class="pin pin-10">Pino 10</div>
+            <div class="pin pin-9">D9</div>
+            <div class="pin pin-10">D10</div>
             <div class="wire wire-a"></div>
             <div class="wire wire-b"></div>
             <div class="led led-red"><span></span><strong>LED 1</strong></div>
             <div class="led led-green"><span></span><strong>LED 2</strong></div>
             <div class="ground">GND</div>
           </div>
-          <p>Os blocos falam com os pinos. Os pinos ligam e desligam os LEDs.</p>
+          <p>Os blocos do mBlock falam com os pinos digitais. Os pinos ligam e desligam os LEDs.</p>
         </div>
       </article>
     </section>
@@ -94,33 +94,33 @@
       <article class="panel reverse">
         <div class="explain">
           <span class="label">Parte 2</span>
-          <h2>Montagem dos blocos</h2>
-          <p>Os blocos organizam as ações do Arduino Leonardo. Primeiro preparamos os pinos. Depois criamos uma repetição para as luzes acenderem e apagarem.</p>
+          <h2>Programação em blocos no mBlock</h2>
+          <p>Esta é a lógica em blocos. O Arduino Leonardo executa tudo em ordem: prepara os pinos, liga e desliga os LEDs e repete a sequência.</p>
           <ul>
-            <li><strong>Ao iniciar</strong> prepara o Arduino quando o projeto começa.</li>
-            <li><strong>Definir pino como saída</strong> diz quais pinos vão mandar energia.</li>
-            <li><strong>Repetir para sempre</strong> faz a sequência acontecer muitas vezes.</li>
-            <li><strong>Ligar pino</strong> acende o LED.</li>
-            <li><strong>Desligar pino</strong> apaga o LED.</li>
-            <li><strong>Esperar</strong> deixa a luz ligada ou apagada por um tempo.</li>
+            <li><strong>quando Arduino Leonardo iniciar</strong> começa a programação.</li>
+            <li><strong>definir pino digital como saída</strong> prepara o pino para mandar energia.</li>
+            <li><strong>repetir para sempre</strong> faz a sequência continuar.</li>
+            <li><strong>definir pino digital para alto</strong> liga o LED.</li>
+            <li><strong>definir pino digital para baixo</strong> desliga o LED.</li>
+            <li><strong>esperar 1 segundos</strong> deixa a luz naquele estado por um tempo.</li>
           </ul>
           <div class="teacher-note">
             <strong>Para explicar em sala:</strong>
-            <p>O Arduino Leonardo não adivinha. Ele atua seguindo os blocos na ordem em que foram montados.</p>
+            <p>O Arduino Leonardo é o ator: ele não escolhe sozinho. Ele segue os blocos do mBlock exatamente como foram montados.</p>
           </div>
         </div>
-        <div class="blocks-card" aria-label="Blocos para ligar e desligar LEDs com Arduino Leonardo">
-          <div class="block start">ao iniciar</div>
-          <div class="block setup">definir pino 9 como saída</div>
-          <div class="block setup">definir pino 10 como saída</div>
+        <div class="blocks-card" aria-label="Blocos do mBlock para ligar e desligar LEDs com Arduino Leonardo">
+          <div class="block start">quando Arduino Leonardo iniciar</div>
+          <div class="block setup">definir pino digital 9 como saída</div>
+          <div class="block setup">definir pino digital 10 como saída</div>
           <div class="block repeat large">
             <span>repetir para sempre</span>
-            <div class="block output red">ligar pino 9</div>
-            <div class="block output green">desligar pino 10</div>
-            <div class="block wait">esperar 1 segundo</div>
-            <div class="block output red">desligar pino 9</div>
-            <div class="block output green">ligar pino 10</div>
-            <div class="block wait">esperar 1 segundo</div>
+            <div class="block output red">definir pino digital 9 para alto</div>
+            <div class="block output green">definir pino digital 10 para baixo</div>
+            <div class="block wait">esperar 1 segundos</div>
+            <div class="block output red">definir pino digital 9 para baixo</div>
+            <div class="block output green">definir pino digital 10 para alto</div>
+            <div class="block wait">esperar 1 segundos</div>
           </div>
         </div>
       </article>
@@ -130,17 +130,17 @@
       <span class="label">Passo a passo</span>
       <h2>O que acontece na ordem?</h2>
       <div class="steps">
-        <article><strong>1. Preparar</strong><p>O Arduino Leonardo entende que os pinos 9 e 10 vão mandar energia.</p></article>
-        <article><strong>2. Ligar o LED 1</strong><p>O pino 9 fica ligado e o LED vermelho acende.</p></article>
-        <article><strong>3. Esperar</strong><p>O Arduino espera 1 segundo antes de trocar a luz.</p></article>
-        <article><strong>4. Ligar o LED 2</strong><p>O pino 10 fica ligado e o LED verde acende.</p></article>
+        <article><strong>1. Preparar</strong><p>O mBlock prepara os pinos digitais 9 e 10 como saídas.</p></article>
+        <article><strong>2. Ligar o LED 1</strong><p>O pino digital 9 fica em alto e o LED 1 acende.</p></article>
+        <article><strong>3. Esperar</strong><p>O Arduino Leonardo espera 1 segundo antes de trocar a luz.</p></article>
+        <article><strong>4. Ligar o LED 2</strong><p>O pino digital 10 fica em alto e o LED 2 acende.</p></article>
       </div>
     </section>
 
     <section class="question-band">
       <span class="label">Pergunta para pensar</span>
       <h2>Como mudar a sequência de luzes?</h2>
-      <p>Podemos trocar o tempo do bloco esperar, adicionar mais LEDs ou mudar a ordem em que eles acendem. Programar é montar instruções para o nosso ator executar.</p>
+      <p>Podemos trocar o tempo do bloco esperar, adicionar mais LEDs ou mudar a ordem dos blocos. Programar é montar instruções para o nosso ator executar.</p>
     </section>
   </main>
 </body>
