@@ -4,14 +4,13 @@
   --paper: #fffdf4;
   --card: #ffffff;
   --line: #dfe5ec;
-  --blue: #2f80ed;
+  --blue: #1677c2;
   --cyan: #35a7c9;
   --orange: #ffb703;
-  --green: #3fb950;
-  --control: #ffab19;
-  --motion: #4c97ff;
-  --looks: #9966ff;
-  --variable: #ff8c1a;
+  --green: #2ea043;
+  --red: #f25f5c;
+  --dark: #122640;
+  --code: #101828;
   --shadow: 0 18px 36px rgba(23, 32, 42, 0.13);
 }
 
@@ -32,9 +31,9 @@ a { color: inherit; }
   flex-direction: column;
   color: #fff;
   background:
-    linear-gradient(115deg, rgba(18, 38, 72, .88), rgba(18, 38, 72, .5)),
-    radial-gradient(circle at 18px 18px, rgba(255,255,255,.32) 2px, transparent 3px),
-    linear-gradient(135deg, #2f80ed 8%, #35a7c9 45%, #ffb703 100%);
+    linear-gradient(115deg, rgba(18, 38, 64, .9), rgba(18, 38, 64, .54)),
+    radial-gradient(circle at 18px 18px, rgba(255,255,255,.34) 2px, transparent 3px),
+    linear-gradient(135deg, #1677c2 5%, #35a7c9 44%, #ffb703 100%);
   background-size: auto, 34px 34px, auto;
 }
 
@@ -48,9 +47,7 @@ a { color: inherit; }
   gap: 18px;
 }
 
-.topbar strong {
-  font-size: 1.08rem;
-}
+.topbar strong { font-size: 1.08rem; }
 
 .topbar div {
   display: flex;
@@ -83,9 +80,9 @@ a { color: inherit; }
 }
 
 h1 {
-  max-width: 820px;
+  max-width: 860px;
   margin: 0;
-  font-size: clamp(2.8rem, 7vw, 6.4rem);
+  font-size: clamp(2.7rem, 7vw, 6.2rem);
   line-height: 1;
 }
 
@@ -96,7 +93,7 @@ h2 {
 }
 
 .hero-text p {
-  max-width: 660px;
+  max-width: 710px;
   margin: 26px 0;
   font-size: 1.22rem;
   line-height: 1.65;
@@ -131,9 +128,7 @@ h2 {
   align-items: start;
 }
 
-.summary-band {
-  background: #eef8fb;
-}
+.summary-band { background: #eaf8fb; }
 
 .summary-band p,
 .question-band p {
@@ -151,7 +146,9 @@ h2 {
 
 .learning-boxes article,
 .steps article,
-.teacher-note {
+.teacher-note,
+.board-card,
+.code-card {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: var(--card);
@@ -230,62 +227,111 @@ h2 {
   border-left: 6px solid var(--orange);
 }
 
-.teacher-note p {
-  margin: 0;
+.teacher-note p { margin: 0; }
+
+.board-card {
+  padding: 22px;
+  overflow: hidden;
 }
 
-.scratch {
-  padding: 24px;
-  min-height: 440px;
-  border: 1px solid var(--line);
+.board-title {
+  margin-bottom: 16px;
+  color: var(--dark);
+  font-weight: 900;
+}
+
+.board {
+  position: relative;
+  min-height: 420px;
   border-radius: 8px;
   background:
-    radial-gradient(circle at 9px 9px, #d7dde6 1px, transparent 1.5px),
-    #fff;
-  background-size: 18px 18px;
-  box-shadow: var(--shadow);
-  overflow-x: auto;
+    radial-gradient(circle at 12px 12px, rgba(255,255,255,.45) 2px, transparent 3px),
+    linear-gradient(135deg, #106b9f, #0f8f91);
+  background-size: 30px 30px, auto;
+  color: #fff;
 }
 
-.block {
-  width: fit-content;
-  max-width: 100%;
-  min-height: 36px;
-  margin: 0 0 7px;
-  padding: 10px 14px;
-  border-radius: 7px;
+.chip {
+  position: absolute;
+  left: 38px;
+  top: 120px;
+  width: 150px;
+  height: 120px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #18324a;
+  font-weight: 900;
+  box-shadow: inset 0 0 0 8px rgba(255,255,255,.08);
+}
+
+.pin,
+.ground {
+  position: absolute;
+  left: 216px;
+  min-width: 86px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: rgba(255,255,255,.18);
+  font-weight: 900;
+}
+
+.pin-9 { top: 106px; }
+.pin-10 { top: 174px; }
+.ground { top: 260px; }
+
+.wire {
+  position: absolute;
+  left: 292px;
+  width: 145px;
+  height: 6px;
+  border-radius: 999px;
+  background: #ffe066;
+}
+
+.wire-a { top: 123px; }
+.wire-b { top: 191px; background: #b7f7c4; }
+
+.led {
+  position: absolute;
+  right: 34px;
+  display: grid;
+  justify-items: center;
+  gap: 8px;
   color: #fff;
   font-weight: 900;
-  font-size: .97rem;
-  line-height: 1.25;
-  box-shadow: inset 0 -2px rgba(0,0,0,.14);
 }
 
-.block.hat {
-  padding-top: 16px;
-  border-radius: 32px 8px 8px 8px;
-  background: var(--orange);
+.led span {
+  width: 54px;
+  height: 54px;
+  border-radius: 50% 50% 44% 44%;
+  box-shadow: 0 0 26px currentColor;
 }
 
-.block.control { background: var(--control); }
-.block.motion { background: var(--motion); }
-.block.looks { background: var(--looks); }
-.block.variable { background: var(--variable); }
-.block.small { min-width: 120px; }
+.led-red { top: 88px; color: #ff6b6b; }
+.led-green { top: 156px; color: #7bed9f; }
+.led-red span { background: #ff6b6b; }
+.led-green span { background: #7bed9f; }
 
-.block.large {
-  min-width: min(100%, 430px);
-  padding: 12px 12px 14px;
+.board-card > p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  line-height: 1.6;
 }
 
-.block.stack {
-  margin-top: 12px;
-  min-width: min(100%, 390px);
+.code-card {
+  margin: 0;
+  padding: 24px;
+  overflow-x: auto;
+  background: var(--code);
+  color: #e7f1ff;
+  font-size: 1rem;
+  line-height: 1.65;
 }
 
-.block.stack .block,
-.block.large > .block:not(.stack) {
-  margin-left: 12px;
+.code-card code {
+  font-family: Consolas, Monaco, 'Courier New', monospace;
 }
 
 .steps {
@@ -300,10 +346,7 @@ h2 {
   padding: 22px;
 }
 
-.question-band {
-  text-align: center;
-}
-
+.question-band { text-align: center; }
 .question-band p {
   margin-left: auto;
   margin-right: auto;
@@ -311,23 +354,17 @@ h2 {
 
 @media (max-width: 900px) {
   .learning-boxes,
-  .steps {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+  .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 820px) {
   .intro,
   .panel,
-  .panel.reverse {
-    grid-template-columns: 1fr;
-  }
-
+  .panel.reverse { grid-template-columns: 1fr; }
   .topbar {
     align-items: flex-start;
     flex-direction: column;
   }
-
   .panel.reverse .explain { order: initial; }
 }
 
@@ -338,9 +375,7 @@ h2 {
   .flow,
   .question-band,
   .summary-band > div,
-  .panel {
-    width: min(100% - 24px, 1120px);
-  }
+  .panel { width: min(100% - 24px, 1120px); }
 
   .hero-text p { font-size: 1.03rem; }
   .intro,
@@ -349,6 +384,11 @@ h2 {
   .summary-band > div { padding: 52px 0; }
   .learning-boxes,
   .steps { grid-template-columns: 1fr; }
-  .scratch { padding: 14px; }
-  .block { font-size: .84rem; }
+  .board { min-height: 360px; }
+  .chip { left: 18px; width: 120px; }
+  .pin,
+  .ground { left: 150px; min-width: 72px; font-size: .85rem; }
+  .wire { left: 222px; width: 72px; }
+  .led { right: 14px; }
+  .code-card { font-size: .86rem; padding: 16px; }
 }
