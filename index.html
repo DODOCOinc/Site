@@ -3,45 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jogo do Panda no Scratch</title>
+  <title>Arduino Leonardo e LEDs</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero">
     <nav class="topbar" aria-label="Navegação principal">
-      <strong>Projeto Scratch</strong>
+      <strong>Arduino Leonardo</strong>
       <div>
-        <a href="#codigo-1">Mover</a>
-        <a href="#codigo-2">Cair</a>
+        <a href="#ator">Ator</a>
+        <a href="#montagem">Montagem</a>
+        <a href="#codigo">Código</a>
         <a href="#sequencia">Passos</a>
       </div>
     </nav>
     <section class="hero-text">
       <span>4º e 5º ano</span>
-      <h1>Jogo do Panda no Scratch</h1>
-      <p>Uma explicação simples dos blocos usados para criar um jogo: o Panda se mexe, o objeto cai e o jogo termina quando eles encostam.</p>
-      <a class="button" href="#codigo-1">Começar</a>
+      <h1>Ligando e desligando LEDs</h1>
+      <p>Uma apresentação simples sobre como montar um código para acender e apagar LEDs, usando o Arduino Leonardo como o ator da programação.</p>
+      <a class="button" href="#ator">Começar</a>
     </section>
   </header>
 
   <main>
-    <section class="intro">
+    <section class="intro" id="ator">
       <div>
-        <span class="label">Ideia do jogo</span>
-        <h2>O que vamos aprender?</h2>
+        <span class="label">Ideia principal</span>
+        <h2>O Arduino Leonardo é o ator</h2>
       </div>
       <div class="learning-boxes">
         <article>
-          <strong>Comandos</strong>
-          <p>Os blocos dizem ao personagem o que ele deve fazer.</p>
+          <strong>Código</strong>
+          <p>O código é o roteiro. Ele diz o que deve acontecer.</p>
         </article>
         <article>
-          <strong>Repetição</strong>
-          <p>O bloco “repetir para sempre” faz uma ação acontecer muitas vezes.</p>
+          <strong>Arduino Leonardo</strong>
+          <p>O Arduino é o ator. Ele recebe o roteiro e faz a ação.</p>
         </article>
         <article>
-          <strong>Condição</strong>
-          <p>O bloco “se... então” só funciona quando algo especial acontece.</p>
+          <strong>LEDs</strong>
+          <p>Os LEDs mostram a ação: acendem quando recebem energia e apagam quando param de receber.</p>
         </article>
       </div>
     </section>
@@ -49,105 +50,99 @@
     <section class="summary-band">
       <div>
         <span class="label">Resumo rápido</span>
-        <h2>Como a partida acontece</h2>
-        <p>Ao clicar na bandeira verde, o jogo começa. O aluno controla o Panda com as setas do teclado. O objeto cai do alto da tela. Se o objeto tocar no Panda, a partida acaba.</p>
+        <h2>O que o projeto faz?</h2>
+        <p>O Arduino Leonardo controla dois LEDs. Primeiro ele liga um LED, espera um pouco, desliga esse LED e liga o outro. Depois repete tudo de novo, como uma sequência de luzes.</p>
       </div>
     </section>
 
-    <section class="code-area blue" id="codigo-1">
+    <section class="code-area blue" id="montagem">
       <article class="panel">
         <div class="explain">
           <span class="label">Parte 1</span>
-          <h2>Como o Panda se move</h2>
-          <p>Este código faz o Panda andar para os lados. Ele também vira para a direção certa e troca de roupa para parecer que está andando.</p>
+          <h2>Montagem do circuito</h2>
+          <p>Antes do código funcionar, precisamos ligar os componentes no Arduino Leonardo. Cada LED deve ter um caminho seguro para receber energia.</p>
           <ul>
-            <li>A bandeira verde inicia o jogo.</li>
-            <li>O cronômetro volta para zero.</li>
-            <li>A seta direita faz o Panda andar para a direita.</li>
-            <li>A seta esquerda faz o Panda andar para a esquerda.</li>
-            <li>Quando chega na borda, ele não sai da tela.</li>
+            <li>Use um LED no pino 9.</li>
+            <li>Use outro LED no pino 10.</li>
+            <li>Cada LED deve ter um resistor para proteger o circuito.</li>
+            <li>A perna maior do LED vai para o pino escolhido.</li>
+            <li>A perna menor vai para o GND, que é o terra.</li>
           </ul>
           <div class="teacher-note">
             <strong>Para explicar em sala:</strong>
-            <p>Este é o controle do jogador. Sem ele, o Panda ficaria parado.</p>
+            <p>O pino funciona como uma porta. Quando o Arduino manda energia pela porta, o LED acende.</p>
           </div>
         </div>
-        <div class="scratch" aria-label="Código Scratch do movimento do Panda">
-          <div class="block hat">quando bandeira verde for clicado</div>
-          <div class="block motion">reiniciar o cronômetro</div>
-          <div class="block control large">
-            <span>repetir para sempre</span>
-            <div class="block motion">se bater no limite, ressaltar</div>
-            <div class="block control stack">
-              <span>se tecla seta para a direita está pressionada? então</span>
-              <div class="block motion">alterar x em 10</div>
-              <div class="block motion">apontar na direção 90</div>
-              <div class="block looks">próxima caracterização</div>
-            </div>
-            <div class="block control stack">
-              <span>se tecla seta para a esquerda está pressionada? então</span>
-              <div class="block motion">alterar x em -10</div>
-              <div class="block motion">apontar na direção -90</div>
-              <div class="block looks">próxima caracterização</div>
-            </div>
+        <div class="board-card" aria-label="Representação da montagem com Arduino Leonardo e LEDs">
+          <div class="board-title">Arduino Leonardo como ator</div>
+          <div class="board">
+            <div class="chip">Leonardo</div>
+            <div class="pin pin-9">Pino 9</div>
+            <div class="pin pin-10">Pino 10</div>
+            <div class="wire wire-a"></div>
+            <div class="wire wire-b"></div>
+            <div class="led led-red"><span></span><strong>LED 1</strong></div>
+            <div class="led led-green"><span></span><strong>LED 2</strong></div>
+            <div class="ground">GND</div>
           </div>
+          <p>O código fala com os pinos. Os pinos ligam e desligam os LEDs.</p>
         </div>
       </article>
     </section>
 
-    <section class="code-area gold" id="codigo-2">
+    <section class="code-area gold" id="codigo">
       <article class="panel reverse">
         <div class="explain">
           <span class="label">Parte 2</span>
-          <h2>Como o objeto cai</h2>
-          <p>Este código faz o objeto aparecer no alto e descer. Quando ele passa do fim da tela, volta para cima em outro lugar.</p>
+          <h2>Montagem do código</h2>
+          <p>O código tem duas partes importantes: uma prepara os pinos e a outra repete a sequência de luzes.</p>
           <ul>
-            <li>O objeto começa no alto da tela.</li>
-            <li>A variável Tempo guarda o tempo da partida.</li>
-            <li>O valor de y diminui, então o objeto desce.</li>
-            <li>Ao chegar embaixo, ele volta para cima.</li>
-            <li>Se tocar no Panda, todos os blocos param.</li>
+            <li><strong>setup()</strong> prepara o Arduino quando o projeto começa.</li>
+            <li><strong>pinMode()</strong> diz que os pinos 9 e 10 serão saídas.</li>
+            <li><strong>loop()</strong> repete os comandos muitas vezes.</li>
+            <li><strong>digitalWrite()</strong> liga ou desliga um LED.</li>
+            <li><strong>delay()</strong> faz o Arduino esperar um tempo.</li>
           </ul>
           <div class="teacher-note">
             <strong>Para explicar em sala:</strong>
-            <p>Este é o desafio do jogo. O jogador precisa desviar do objeto.</p>
+            <p>O Arduino Leonardo não adivinha. Ele só faz o que o código manda, na ordem em que está escrito.</p>
           </div>
         </div>
-        <div class="scratch" aria-label="Código Scratch da queda e colisão">
-          <div class="block hat">quando bandeira verde for clicado</div>
-          <div class="block motion">ir para x: 0 y: 250</div>
-          <div class="block control large">
-            <span>repetir para sempre</span>
-            <div class="block variable">definir Tempo para cronômetro</div>
-            <div class="block motion">alterar y em -6</div>
-            <div class="block control stack">
-              <span>se coordenada y da posição &lt; -234 então</span>
-              <div class="block motion">ir para x: aleatório entre -200 e 200 y: 125</div>
-            </div>
-            <div class="block control stack">
-              <span>se a tocar Panda? então</span>
-              <div class="block control small">parar todos</div>
-            </div>
-          </div>
-        </div>
+        <pre class="code-card" aria-label="Código Arduino para ligar e desligar LEDs"><code>int ledVermelho = 9;
+int ledVerde = 10;
+
+void setup() {
+  pinMode(ledVermelho, OUTPUT);
+  pinMode(ledVerde, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(ledVermelho, HIGH);
+  digitalWrite(ledVerde, LOW);
+  delay(1000);
+
+  digitalWrite(ledVermelho, LOW);
+  digitalWrite(ledVerde, HIGH);
+  delay(1000);
+}</code></pre>
       </article>
     </section>
 
     <section class="flow" id="sequencia">
       <span class="label">Passo a passo</span>
-      <h2>Ordem dos acontecimentos</h2>
+      <h2>O que acontece na ordem?</h2>
       <div class="steps">
-        <article><strong>1. Começa</strong><p>A bandeira verde inicia tudo e zera o tempo.</p></article>
-        <article><strong>2. O Panda anda</strong><p>As setas fazem o personagem ir para os lados.</p></article>
-        <article><strong>3. O objeto desce</strong><p>Ele cai do alto e volta para cima quando passa do limite.</p></article>
-        <article><strong>4. A partida termina</strong><p>Se o objeto tocar no Panda, o jogo para.</p></article>
+        <article><strong>1. Preparar</strong><p>O Arduino Leonardo entende que os pinos 9 e 10 vão mandar energia.</p></article>
+        <article><strong>2. Ligar o LED 1</strong><p>O pino 9 fica ligado e o LED vermelho acende.</p></article>
+        <article><strong>3. Esperar</strong><p>O Arduino espera 1 segundo antes de trocar a luz.</p></article>
+        <article><strong>4. Ligar o LED 2</strong><p>O pino 10 fica ligado e o LED verde acende.</p></article>
       </div>
     </section>
 
     <section class="question-band">
       <span class="label">Pergunta para pensar</span>
-      <h2>Como poderíamos deixar o jogo mais divertido?</h2>
-      <p>Podemos mudar a velocidade, colocar pontos, criar fases ou adicionar sons. Programar é testar ideias e melhorar aos poucos.</p>
+      <h2>Como mudar a sequência de luzes?</h2>
+      <p>Podemos trocar o tempo do delay, adicionar mais LEDs ou mudar a ordem em que eles acendem. Programar é montar instruções para o nosso ator executar.</p>
     </section>
   </main>
 </body>
