@@ -3,144 +3,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Arduino Leonardo e LEDs no mBlock</title>
+  <title>Aula Tinkercad: Botão e LED</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero">
     <nav class="topbar" aria-label="Navegação principal">
-      <strong>mBlock + Arduino Leonardo</strong>
+      <strong>Tinkercad + Arduino Leonardo</strong>
       <div>
-        <a href="#ator">Ator</a>
-        <a href="#montagem">Montagem</a>
-        <a href="#codigo">Blocos mBlock</a>
-        <a href="#sequencia">Passos</a>
+        <a href="#acolhimento">Acolhimento</a>
+        <a href="#introducao">Introdução</a>
+        <a href="#tinkercad">Tinkercad</a>
+        <a href="#blocos">Blocos</a>
       </div>
     </nav>
     <section class="hero-text">
       <span>4º e 5º ano</span>
-      <h1>Ligando e desligando LEDs</h1>
-      <p>Uma apresentação simples sobre como montar a programação em blocos no mBlock, usando o Arduino Leonardo como o ator que executa os comandos.</p>
-      <a class="button" href="#ator">Começar</a>
+      <h1>Botão como sensor, LED como resposta</h1>
+      <p>Uma aula prática para montar um circuito botão + LED no Tinkercad, entendendo o Arduino Leonardo como o ator que executa a programação visual.</p>
+      <a class="button" href="#acolhimento">Começar aula</a>
     </section>
   </header>
 
   <main>
-    <section class="intro" id="ator">
+    <section class="intro" id="acolhimento">
       <div>
-        <span class="label">Ideia principal</span>
-        <h2>O Arduino Leonardo é o ator</h2>
+        <span class="label">Acolhimento</span>
+        <h2>Organizar duplas e conferir materiais</h2>
       </div>
       <div class="learning-boxes">
         <article>
-          <strong>Blocos do mBlock</strong>
-          <p>Os blocos são o roteiro. Eles dizem quais ações devem acontecer.</p>
+          <strong>Duplas</strong>
+          <p>Formar duplas para que um estudante monte o circuito e o outro acompanhe a programação visual.</p>
         </article>
         <article>
-          <strong>Arduino Leonardo</strong>
-          <p>O Arduino é o ator. Ele recebe os blocos e faz a ação no circuito.</p>
+          <strong>Materiais</strong>
+          <p>Conferir Arduino Leonardo, protoboard, LED, resistor, botão, fios e computador com acesso ao Tinkercad.</p>
         </article>
         <article>
-          <strong>LEDs</strong>
-          <p>Os LEDs mostram a ação: acendem quando recebem energia e apagam quando param de receber.</p>
+          <strong>Combinado</strong>
+          <p>Antes de ligar ou simular, todos conferem se o LED, o resistor e o botão estão no lugar certo.</p>
         </article>
       </div>
     </section>
 
-    <section class="summary-band">
+    <section class="summary-band" id="introducao">
       <div>
-        <span class="label">Resumo rápido</span>
-        <h2>O que o projeto faz?</h2>
-        <p>No mBlock, montamos blocos para o Arduino Leonardo controlar dois LEDs. Um LED acende, o outro apaga, o Arduino espera um pouco e depois troca as luzes.</p>
+        <span class="label">Introdução</span>
+        <h2>O que cada componente faz?</h2>
+        <div class="component-grid">
+          <article><strong>Arduino Leonardo</strong><p>É o ator da programação. Ele lê o botão e decide ligar ou desligar o LED.</p></article>
+          <article><strong>LED</strong><p>É a saída visual. Ele mostra a resposta do circuito acendendo ou apagando.</p></article>
+          <article><strong>Resistor</strong><p>Protege o LED, diminuindo a corrente elétrica para evitar que ele queime.</p></article>
+          <article><strong>Botão</strong><p>É um sensor de entrada. Quando pressionado, informa ao Arduino que uma ação aconteceu.</p></article>
+          <article><strong>Protoboard</strong><p>Ajuda a organizar as conexões sem solda, permitindo montar e testar o circuito.</p></article>
+          <article><strong>Fios</strong><p>Levam os sinais entre Arduino, botão, resistor e LED.</p></article>
+        </div>
       </div>
     </section>
 
-    <section class="code-area blue" id="montagem">
+    <section class="code-area blue" id="tinkercad">
       <article class="panel">
         <div class="explain">
-          <span class="label">Parte 1</span>
-          <h2>Montagem do circuito</h2>
-          <p>Antes dos blocos funcionarem, precisamos ligar os componentes no Arduino Leonardo. Cada LED deve ter um caminho seguro para receber energia.</p>
+          <span class="label">Prática ativa</span>
+          <h2>Montar no Tinkercad</h2>
+          <p>No Tinkercad, a dupla testa o circuito antes de usar os materiais físicos. O botão vira uma entrada: ele envia um sinal. O LED vira uma saída: ele mostra a resposta.</p>
           <ul>
-            <li>Use um LED no pino digital 9.</li>
-            <li>Use outro LED no pino digital 10.</li>
-            <li>Cada LED deve ter um resistor para proteger o circuito.</li>
-            <li>A perna maior do LED vai para o pino escolhido.</li>
-            <li>A perna menor vai para o GND, que é o terra.</li>
+            <li>Adicionar Arduino, protoboard, LED, resistor e botão.</li>
+            <li>Ligar o LED a um pino digital, por exemplo D9.</li>
+            <li>Ligar o botão a outro pino digital, por exemplo D2.</li>
+            <li>Usar resistor no LED para proteção.</li>
+            <li>Usar resistor no botão para deixar o sinal estável.</li>
+            <li>Iniciar a simulação e testar o botão.</li>
           </ul>
           <div class="teacher-note">
-            <strong>Para explicar em sala:</strong>
-            <p>No mBlock, usamos blocos para mandar ordens aos pinos digitais do Arduino Leonardo.</p>
+            <strong>Fala para a turma:</strong>
+            <p>O botão pergunta: “alguém me apertou?”. O Arduino Leonardo escuta essa pergunta e responde ligando ou desligando o LED.</p>
           </div>
         </div>
-        <div class="board-card" aria-label="Representação da montagem com Arduino Leonardo e LEDs">
-          <div class="board-title">Arduino Leonardo como ator</div>
-          <div class="board">
-            <div class="chip">Leonardo</div>
-            <div class="pin pin-9">D9</div>
-            <div class="pin pin-10">D10</div>
-            <div class="wire wire-a"></div>
-            <div class="wire wire-b"></div>
-            <div class="led led-red"><span></span><strong>LED 1</strong></div>
-            <div class="led led-green"><span></span><strong>LED 2</strong></div>
-            <div class="ground">GND</div>
-          </div>
-          <p>Os blocos do mBlock falam com os pinos digitais. Os pinos ligam e desligam os LEDs.</p>
-        </div>
+        <figure class="figure-card">
+          <img src="https://wp.nyu.edu/shanghai-ima-interaction-lab/wp-content/uploads/sites/12907/2020/10/Arduino-Recap-Workshop-Button_-State-v.s.-Moment.png" alt="Diagrama de circuito no Tinkercad com botão controlando LED">
+          <figcaption>Circuito de referência feito no Tinkercad: botão como entrada e LED como saída.</figcaption>
+        </figure>
       </article>
     </section>
 
-    <section class="code-area gold" id="codigo">
+    <section class="image-band">
+      <span class="label">Ilustração da internet</span>
+      <h2>Como observar a montagem</h2>
+      <div class="media-grid">
+        <figure class="figure-card">
+          <img src="https://wp.nyu.edu/shanghai-ima-interaction-lab/wp-content/uploads/sites/12907/2020/10/Arduino-Recap-Workshop-Button_-State-v.s.-Moment.png" alt="Montagem de botão controlando LED no Tinkercad">
+          <figcaption>Use como referência para posicionar Arduino, botão, LED e resistores.</figcaption>
+        </figure>
+        <figure class="figure-card">
+          <img src="https://wp.nyu.edu/shanghai-ima-interaction-lab/wp-content/uploads/sites/12907/2020/10/Screen-Shot-2020-10-22-at-2.29.11-PM-1-1024x799.png" alt="Tela com exemplo de LED e Arduino">
+          <figcaption>Exemplo visual para discutir entrada, saída e resposta do Arduino.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="code-area gold" id="blocos">
       <article class="panel reverse">
         <div class="explain">
-          <span class="label">Parte 2</span>
-          <h2>Programação em blocos no mBlock</h2>
-          <p>Esta é a lógica em blocos. O Arduino Leonardo executa tudo em ordem: prepara os pinos, liga e desliga os LEDs e repete a sequência.</p>
+          <span class="label">Programação visual</span>
+          <h2>Blocos para botão acionar LED</h2>
+          <p>A lógica é simples: o Arduino Leonardo lê o botão. Se o botão estiver pressionado, o LED acende. Se não estiver pressionado, o LED apaga.</p>
           <ul>
-            <li><strong>quando Arduino Leonardo iniciar</strong> começa a programação.</li>
-            <li><strong>definir pino digital como saída</strong> prepara o pino para mandar energia.</li>
-            <li><strong>repetir para sempre</strong> faz a sequência continuar.</li>
-            <li><strong>definir pino digital para alto</strong> liga o LED.</li>
-            <li><strong>definir pino digital para baixo</strong> desliga o LED.</li>
-            <li><strong>esperar 1 segundos</strong> deixa a luz naquele estado por um tempo.</li>
+            <li>O botão é configurado como entrada.</li>
+            <li>O LED é configurado como saída.</li>
+            <li>O bloco “se” toma a decisão.</li>
+            <li>O LED acende quando a leitura do botão estiver ativa.</li>
+            <li>O LED apaga quando o botão não estiver pressionado.</li>
           </ul>
           <div class="teacher-note">
-            <strong>Para explicar em sala:</strong>
-            <p>O Arduino Leonardo é o ator: ele não escolhe sozinho. Ele segue os blocos do mBlock exatamente como foram montados.</p>
+            <strong>Ponto-chave:</strong>
+            <p>Entrada é o que o sistema percebe. Saída é o que o sistema faz depois de perceber.</p>
           </div>
         </div>
-        <div class="blocks-card" aria-label="Blocos do mBlock para ligar e desligar LEDs com Arduino Leonardo">
+        <div class="blocks-card" aria-label="Blocos visuais para botão controlar LED">
           <div class="block start">quando Arduino Leonardo iniciar</div>
           <div class="block setup">definir pino digital 9 como saída</div>
-          <div class="block setup">definir pino digital 10 como saída</div>
+          <div class="block sensor">definir pino digital 2 como entrada</div>
           <div class="block repeat large">
             <span>repetir para sempre</span>
-            <div class="block output red">definir pino digital 9 para alto</div>
-            <div class="block output green">definir pino digital 10 para baixo</div>
-            <div class="block wait">esperar 1 segundos</div>
-            <div class="block output red">definir pino digital 9 para baixo</div>
-            <div class="block output green">definir pino digital 10 para alto</div>
-            <div class="block wait">esperar 1 segundos</div>
+            <div class="block condition large nested">
+              <span>se leitura digital do pino 2 = alto então</span>
+              <div class="block output green">definir pino digital 9 para alto</div>
+              <span class="else-label">senão</span>
+              <div class="block output red">definir pino digital 9 para baixo</div>
+            </div>
           </div>
         </div>
       </article>
     </section>
 
     <section class="flow" id="sequencia">
-      <span class="label">Passo a passo</span>
-      <h2>O que acontece na ordem?</h2>
+      <span class="label">Roteiro da aula</span>
+      <h2>Desenvolvimento sugerido</h2>
       <div class="steps">
-        <article><strong>1. Preparar</strong><p>O mBlock prepara os pinos digitais 9 e 10 como saídas.</p></article>
-        <article><strong>2. Ligar o LED 1</strong><p>O pino digital 9 fica em alto e o LED 1 acende.</p></article>
-        <article><strong>3. Esperar</strong><p>O Arduino Leonardo espera 1 segundo antes de trocar a luz.</p></article>
-        <article><strong>4. Ligar o LED 2</strong><p>O pino digital 10 fica em alto e o LED 2 acende.</p></article>
+        <article><strong>1. Acolher</strong><p>Organizar duplas, distribuir papéis e verificar materiais eletrônicos.</p></article>
+        <article><strong>2. Explicar</strong><p>Mostrar a função física do resistor, do LED, do botão e do Arduino Leonardo.</p></article>
+        <article><strong>3. Simular</strong><p>Montar o circuito botão + LED no Tinkercad e observar a simulação.</p></article>
+        <article><strong>4. Programar</strong><p>Usar blocos para transformar o botão em comando e o LED em resposta.</p></article>
       </div>
     </section>
 
     <section class="question-band">
-      <span class="label">Pergunta para pensar</span>
-      <h2>Como mudar a sequência de luzes?</h2>
-      <p>Podemos trocar o tempo do bloco esperar, adicionar mais LEDs ou mudar a ordem dos blocos. Programar é montar instruções para o nosso ator executar.</p>
+      <span class="label">Fechamento</span>
+      <h2>O que mudou quando apertamos o botão?</h2>
+      <p>O botão enviou uma entrada, o Arduino Leonardo interpretou essa entrada e o LED mostrou a saída. Essa é a ponte entre hardware físico e programação visual.</p>
+      <p class="source-note">Imagens de referência: Interaction Lab, NYU Shanghai. Conteúdo complementar consultado: CanadaCAD.ca e tutorial do Interaction Lab sobre botão controlando LED.</p>
     </section>
   </main>
 </body>
