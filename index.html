@@ -3,157 +3,156 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aula Tinkercad: Botão e LED</title>
+  <title>Projeto 2 - Gangorra com Servomotor</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="hero">
-    <nav class="topbar" aria-label="Navegação principal">
-      <strong>Tinkercad + Arduino Leonardo</strong>
+    <nav class="topbar" aria-label="Navegacao principal">
+      <strong>Projeto 2: Montagem</strong>
       <div>
-        <a href="#acolhimento">Acolhimento</a>
-        <a href="#introducao">Introdução</a>
-        <a href="#tinkercad">Tinkercad</a>
-        <a href="#blocos">Blocos</a>
+        <a href="#roteiro">Roteiro</a>
+        <a href="#componentes">Componentes</a>
+        <a href="#montagem">Montagem</a>
+        <a href="#simulacao">Simulacao</a>
       </div>
     </nav>
     <section class="hero-text">
-      <span>4º e 5º ano</span>
-      <h1>Botão como sensor, LED como resposta</h1>
-      <p>Uma aula prática para montar um circuito botão + LED no Tinkercad, entendendo o Arduino Leonardo como o ator que executa a programação visual.</p>
-      <a class="button" href="#acolhimento">Começar aula</a>
+      <span>Aula 1 - 27/07</span>
+      <h1>Gangorra com servomotor</h1>
+      <p>Uma aula para construir e simular uma gangorra modelo #2, entendendo como a estrutura fisica, o atuador e a programacao trabalham juntos para gerar movimento.</p>
+      <a class="button" href="#roteiro">Ver roteiro da aula</a>
     </section>
   </header>
 
   <main>
-    <section class="intro" id="acolhimento">
+    <section class="intro" id="roteiro">
       <div>
-        <span class="label">Acolhimento</span>
-        <h2>Organizar duplas e conferir materiais</h2>
+        <span class="label">Roteiro</span>
+        <h2>Desenvolvimento da aula</h2>
       </div>
       <div class="learning-boxes">
         <article>
-          <strong>Duplas</strong>
-          <p>Formar duplas para que um estudante monte o circuito e o outro acompanhe a programação visual.</p>
+          <strong>Acolhimento</strong>
+          <p>Organizar as duplas, conferir o Kit #1204RR e combinar os papeis de montagem, observacao e registro.</p>
         </article>
         <article>
-          <strong>Materiais</strong>
-          <p>Conferir Arduino Leonardo, protoboard, LED, resistor, botão, fios e computador com acesso ao Tinkercad.</p>
+          <strong>Introducao</strong>
+          <p>Explicar a funcao da gangorra, do eixo, das hastes e do servomotor como atuador que produz movimento.</p>
         </article>
         <article>
-          <strong>Combinado</strong>
-          <p>Antes de ligar ou simular, todos conferem se o LED, o resistor e o botão estão no lugar certo.</p>
+          <strong>Pratica ativa</strong>
+          <p>Montar o prototipo, simular o movimento e relacionar o que acontece na estrutura com a logica programada.</p>
         </article>
       </div>
     </section>
 
-    <section class="summary-band" id="introducao">
+    <section class="summary-band">
       <div>
-        <span class="label">Introdução</span>
-        <h2>O que cada componente faz?</h2>
-        <div class="component-grid">
-          <article><strong>Arduino Leonardo</strong><p>É o ator da programação. Ele lê o botão e decide ligar ou desligar o LED.</p></article>
-          <article><strong>LED</strong><p>É a saída visual. Ele mostra a resposta do circuito acendendo ou apagando.</p></article>
-          <article><strong>Resistor</strong><p>Protege o LED, diminuindo a corrente elétrica para evitar que ele queime.</p></article>
-          <article><strong>Botão</strong><p>É um sensor de entrada. Quando pressionado, informa ao Arduino que uma ação aconteceu.</p></article>
-          <article><strong>Protoboard</strong><p>Ajuda a organizar as conexões sem solda, permitindo montar e testar o circuito.</p></article>
-          <article><strong>Fios</strong><p>Levam os sinais entre Arduino, botão, resistor e LED.</p></article>
-        </div>
+        <span class="label">Conteudo programatico</span>
+        <h2>Montagem da Gangorra - Modelo #2</h2>
+        <p>Foco em atuadores, especialmente o servomotor, e em como o movimento aparece quando a programacao envia comandos para a parte fisica do prototipo.</p>
       </div>
     </section>
 
-    <section class="code-area blue" id="tinkercad">
+    <section class="code-area blue" id="componentes">
       <article class="panel">
         <div class="explain">
-          <span class="label">Prática ativa</span>
-          <h2>Montar no Tinkercad</h2>
-          <p>No Tinkercad, a dupla testa o circuito antes de usar os materiais físicos. O botão vira uma entrada: ele envia um sinal. O LED vira uma saída: ele mostra a resposta.</p>
+          <span class="label">Componentes</span>
+          <h2>O que cada parte faz?</h2>
+          <p>A gangorra ajuda a visualizar como uma ordem da programacao vira movimento real. Cada componente tem uma funcao no funcionamento do sistema.</p>
           <ul>
-            <li>Adicionar Arduino, protoboard, LED, resistor e botão.</li>
-            <li>Ligar o LED a um pino digital, por exemplo D9.</li>
-            <li>Ligar o botão a outro pino digital, por exemplo D2.</li>
-            <li>Usar resistor no LED para proteção.</li>
-            <li>Usar resistor no botão para deixar o sinal estável.</li>
-            <li>Iniciar a simulação e testar o botão.</li>
+            <li><strong>Estrutura:</strong> sustenta a gangorra e mantem o modelo firme.</li>
+            <li><strong>Eixo:</strong> permite que a gangorra balance para um lado e para o outro.</li>
+            <li><strong>Servomotor:</strong> e o atuador que gira para criar o movimento.</li>
+            <li><strong>Haste:</strong> liga o giro do servo ao movimento da gangorra.</li>
+            <li><strong>Programacao:</strong> define a posicao e a ordem dos movimentos.</li>
           </ul>
           <div class="teacher-note">
-            <strong>Fala para a turma:</strong>
-            <p>O botão pergunta: “alguém me apertou?”. O Arduino Leonardo escuta essa pergunta e responde ligando ou desligando o LED.</p>
+            <strong>Para explicar em sala:</strong>
+            <p>O servomotor e como o musculo do projeto: ele recebe uma ordem e movimenta a gangorra.</p>
           </div>
         </div>
-        <figure class="figure-card">
-          <img src="https://wp.nyu.edu/shanghai-ima-interaction-lab/wp-content/uploads/sites/12907/2020/10/Arduino-Recap-Workshop-Button_-State-v.s.-Moment.png" alt="Diagrama de circuito no Tinkercad com botão controlando LED">
-          <figcaption>Circuito de referência feito no Tinkercad: botão como entrada e LED como saída.</figcaption>
-        </figure>
+        <div class="diagram-card" aria-label="Ilustracao da gangorra com servomotor">
+          <div class="seesaw">
+            <div class="beam">
+              <span class="seat left-seat"></span>
+              <span class="seat right-seat"></span>
+            </div>
+            <div class="pivot"></div>
+            <div class="servo">
+              <span>Servo</span>
+              <i></i>
+            </div>
+            <div class="linkage"></div>
+          </div>
+          <p>O servo gira, empurra a haste e faz a gangorra mudar de inclinacao.</p>
+        </div>
       </article>
     </section>
 
-    <section class="image-band">
-      <span class="label">Ilustração da internet</span>
-      <h2>Como observar a montagem</h2>
-      <div class="media-grid">
-        <figure class="figure-card">
-          <img src="https://wp.nyu.edu/shanghai-ima-interaction-lab/wp-content/uploads/sites/12907/2020/10/Arduino-Recap-Workshop-Button_-State-v.s.-Moment.png" alt="Montagem de botão controlando LED no Tinkercad">
-          <figcaption>Use como referência para posicionar Arduino, botão, LED e resistores.</figcaption>
-        </figure>
-        <figure class="figure-card">
-          <img src="https://wp.nyu.edu/shanghai-ima-interaction-lab/wp-content/uploads/sites/12907/2020/10/Screen-Shot-2020-10-22-at-2.29.11-PM-1-1024x799.png" alt="Tela com exemplo de LED e Arduino">
-          <figcaption>Exemplo visual para discutir entrada, saída e resposta do Arduino.</figcaption>
-        </figure>
+    <section class="code-area gold" id="montagem">
+      <article class="panel reverse">
+        <div class="explain">
+          <span class="label">Kit #1204RR</span>
+          <h2>Sequencia de montagem</h2>
+          <p>O objetivo e construir o prototipo com cuidado, testando se a parte mecanica se move livremente antes de simular a programacao.</p>
+          <ul>
+            <li>Separar as pecas da base, eixo, haste e apoio.</li>
+            <li>Montar a base e verificar se ela fica estavel.</li>
+            <li>Fixar a gangorra no eixo central.</li>
+            <li>Conectar o servomotor ao mecanismo de movimento.</li>
+            <li>Testar manualmente se a gangorra sobe e desce sem travar.</li>
+            <li>Simular o comando do servo para observar o movimento.</li>
+          </ul>
+          <div class="teacher-note">
+            <strong>Ponto de atencao:</strong>
+            <p>Se a gangorra estiver travando, o problema pode estar na montagem mecanica, nao na programacao.</p>
+          </div>
+        </div>
+        <div class="timeline-card" aria-label="Passos de montagem da gangorra">
+          <article><span>1</span><strong>Organizar</strong><p>Duplas e materiais.</p></article>
+          <article><span>2</span><strong>Montar</strong><p>Base, eixo e gangorra.</p></article>
+          <article><span>3</span><strong>Conectar</strong><p>Servo e haste.</p></article>
+          <article><span>4</span><strong>Simular</strong><p>Movimento do prototipo.</p></article>
+        </div>
+      </article>
+    </section>
+
+    <section class="flow" id="simulacao">
+      <span class="label">Objetivo</span>
+      <h2>Construir, simular e explicar</h2>
+      <div class="steps">
+        <article><strong>Construir</strong><p>Montar um prototipo de objeto do cotidiano usando o modelo de gangorra.</p></article>
+        <article><strong>Integrar</strong><p>Relacionar a estrutura fisica com a logica mecanica do movimento.</p></article>
+        <article><strong>Simular</strong><p>Observar como o servomotor altera a posicao da gangorra.</p></article>
+        <article><strong>Explicar</strong><p>Descrever como cada componente participa do funcionamento.</p></article>
       </div>
     </section>
 
-    <section class="code-area gold" id="blocos">
-      <article class="panel reverse">
-        <div class="explain">
-          <span class="label">Programação visual</span>
-          <h2>Blocos para botão acionar LED</h2>
-          <p>A lógica é simples: o Arduino Leonardo lê o botão. Se o botão estiver pressionado, o LED acende. Se não estiver pressionado, o LED apaga.</p>
-          <ul>
-            <li>O botão é configurado como entrada.</li>
-            <li>O LED é configurado como saída.</li>
-            <li>O bloco “se” toma a decisão.</li>
-            <li>O LED acende quando a leitura do botão estiver ativa.</li>
-            <li>O LED apaga quando o botão não estiver pressionado.</li>
-          </ul>
-          <div class="teacher-note">
-            <strong>Ponto-chave:</strong>
-            <p>Entrada é o que o sistema percebe. Saída é o que o sistema faz depois de perceber.</p>
-          </div>
+    <section class="blocks-section">
+      <div class="blocks-text">
+        <span class="label">Programacao visual</span>
+        <h2>Logica do movimento</h2>
+        <p>Na programacao, o servomotor recebe posicoes. Cada posicao muda o angulo do eixo e faz a gangorra se mover.</p>
+      </div>
+      <div class="blocks-card" aria-label="Blocos para controlar servomotor da gangorra">
+        <div class="block start">quando iniciar</div>
+        <div class="block setup">definir servo no pino 9</div>
+        <div class="block repeat large">
+          <span>repetir para sempre</span>
+          <div class="block motion">mover servo para 30 graus</div>
+          <div class="block wait">esperar 1 segundo</div>
+          <div class="block motion">mover servo para 150 graus</div>
+          <div class="block wait">esperar 1 segundo</div>
         </div>
-        <div class="blocks-card" aria-label="Blocos visuais para botão controlar LED">
-          <div class="block start">quando Arduino Leonardo iniciar</div>
-          <div class="block setup">definir pino digital 9 como saída</div>
-          <div class="block sensor">definir pino digital 2 como entrada</div>
-          <div class="block repeat large">
-            <span>repetir para sempre</span>
-            <div class="block condition large nested">
-              <span>se leitura digital do pino 2 = alto então</span>
-              <div class="block output green">definir pino digital 9 para alto</div>
-              <span class="else-label">senão</span>
-              <div class="block output red">definir pino digital 9 para baixo</div>
-            </div>
-          </div>
-        </div>
-      </article>
-    </section>
-
-    <section class="flow" id="sequencia">
-      <span class="label">Roteiro da aula</span>
-      <h2>Desenvolvimento sugerido</h2>
-      <div class="steps">
-        <article><strong>1. Acolher</strong><p>Organizar duplas, distribuir papéis e verificar materiais eletrônicos.</p></article>
-        <article><strong>2. Explicar</strong><p>Mostrar a função física do resistor, do LED, do botão e do Arduino Leonardo.</p></article>
-        <article><strong>3. Simular</strong><p>Montar o circuito botão + LED no Tinkercad e observar a simulação.</p></article>
-        <article><strong>4. Programar</strong><p>Usar blocos para transformar o botão em comando e o LED em resposta.</p></article>
       </div>
     </section>
 
     <section class="question-band">
       <span class="label">Fechamento</span>
-      <h2>O que mudou quando apertamos o botão?</h2>
-      <p>O botão enviou uma entrada, o Arduino Leonardo interpretou essa entrada e o LED mostrou a saída. Essa é a ponte entre hardware físico e programação visual.</p>
-      <p class="source-note">Imagens de referência: Interaction Lab, NYU Shanghai. Conteúdo complementar consultado: CanadaCAD.ca e tutorial do Interaction Lab sobre botão controlando LED.</p>
+      <h2>Como a programacao virou movimento?</h2>
+      <p>O servo recebeu comandos, girou em angulos diferentes e movimentou a gangorra. Assim, a turma consegue ver a relacao entre codigo, atuador, estrutura fisica e movimento.</p>
     </section>
   </main>
 </body>
